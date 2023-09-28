@@ -27,116 +27,199 @@ Column {data-width=700}
 tabsetPanel(
   id = "wizard",
   type = "hidden",
-  tabPanel("page_1", 
-           "Which do you prefer?",
-           actionButton("page_11", "dogs"), 
-           actionButton("page_12", 'cats')
+  tabPanel("LOCATION", 
+           "Is the project associated with a specific location?",
+           actionButton("LOCATION_Yes", "Yes"), 
+           actionButton("LOCATION_No", "No")
   ),
-  tabPanel("page_2", 
-           "What kind of dogs?",
-           actionButton("page_21", "big"),
-           actionButton("page_22", "small"),
-           actionButton("page_23", 'Prev')
+  tabPanel("ARCHSITE", 
+           "Is the project within 50 meters of an archaeological site mapped by the Florida Master Site?",
+           actionButton("ARCHSITE_Yes", "Yes"), 
+           actionButton("ARCHSITE_No", "No"), 
+           actionButton("ARCHSITE_Unsure", "Unsure")
   ),
-  tabPanel("page_3", 
-           "What kind of cats",
-           actionButton("page_31", "fluffy"),
-           actionButton("page_32", "orange"),
-           actionButton("page_33", 'Prev')
+  tabPanel("ELIGIBLE", 
+           "Is the site listed on or potentially eligible for the National Registry?",
+           actionButton("ELIGIBLE_Yes", "Yes"), 
+           actionButton("ELIGIBLE_No", "No")
   ),
-  tabPanel("page_4", 
-           "What kind of big dogs?",
-           actionButton("page_41", "very big"),
-           actionButton("page_42", "not too big"),
-           actionButton("page_43", 'Prev')
+  tabPanel("REMAINS", 
+           "Does the site contain human remains?",
+           actionButton("REMAINS_Yes", "Yes"), 
+           actionButton("REMAINS_No", "No")
   ),
-  tabPanel("page_5", 
-           "What kind of small dogs?",
-           actionButton("page_51", "very small"),
-           actionButton("page_52", "not too small"),
-           actionButton("page_53", 'Prev')
+  tabPanel("MULTIPLE", 
+           "Could the project be suitable for multiple locations?",
+           actionButton("MULTIPLE_Yes", "Yes"), 
+           actionButton("MULTIPLE_No", "No")
   ),
-  tabPanel("page_6", 
-           "What kind of fluffy cats?",
-           actionButton("page_61", "very fluffy"),
-           actionButton("page_62", "not too fluffy"),
-           actionButton("page_63", 'Prev')
+  tabPanel("PROX-MULTIPLE", 
+           "Is one of those locations within 1 mile or directly upstream of an underserved community?",
+           actionButton("MULTIPLE_Yes", "Yes"), 
+           actionButton("MULTIPLE_No", "No")
   ),
-  tabPanel("page_7", 
-           "What kind of orange cats?",
-           actionButton("page_71", "very orange"),
-           actionButton("page_72", "not too orange"),
-           actionButton("page_73", 'Prev')
+  tabPanel("OUTCOME", 
+           "Would outcomes be significantly reduced if placed near the underserved community?",
+           actionButton("OUTCOME_Yes", "Yes"), 
+           actionButton("OUTCOME_No", "No")
   ),
-  tabPanel("page_8", 
-           "You like very big dogs!",
-           actionButton("page_83", 'Prev')
+  tabPanel("ACCESS-LOCAL", 
+           "Is it reasonable to believe underserved communities would have (at least) equal access to the project's benefits as other communities?",
+           actionButton("ACCESS-LOCAL_Yes", "Yes"), 
+           actionButton("ACCESS-LOCAL_No", "No")
   ),
-  tabPanel("page_9", 
-           "You like not too big dogs!",
-           actionButton("page_93", 'Prev')
+  tabPanel("BURDEN", 
+           "Could the project help mitigate an environmental burden flagged in the underserved community?",
+           actionButton("BURDEN_Yes", "Yes"), 
+           actionButton("BURDEN_No", "No")
   ),
-  tabPanel("page_10", 
-           "You like very small dogs!",
-           actionButton("page_103", 'Prev')
+  tabPanel("RECOGNITION", 
+           "Do the project benefits align with reported values, needs, or priorities of the community?",
+           actionButton("RECOGNITION_Yes", "Yes"), 
+           actionButton("RECOGNITION_No", "No"), 
+           actionButton("RECOGNITION_Unsure", "Unsure")
   ),
-  tabPanel("page_11", 
-           "You like not too small dogs!",
-           actionButton("page_113", 'Prev')
+  tabPanel("WHY", 
+           "Why not?",
+           actionButton("WHY_Char", "Due to project characteristics"), 
+           actionButton("WHY_Data", "Due to lack of data or information")
   ),
-  tabPanel("page_12", 
-           "You like very fluffy cats!",
-           actionButton("page_123", 'Prev')
+  tabPanel("IMPROVE", 
+           "Could access be reasonably improved without significantly reducing project outcomes or increasing timelines?",
+           actionButton("IMPROVE_Yes", "Yes"), 
+           actionButton("IMPROVE_No", "No")
   ),
-  tabPanel("page_13", 
-           "You like not too fluffy cats!",
-           actionButton("page_133", 'Prev')
+  tabPanel("PROX-SINGLE", 
+           "Is the project located within 1 mile or directly upstream of an underserved community?",
+           actionButton("PROX-SINGLE_Yes", "Yes"), 
+           actionButton("PROX-SINGLE_No", "No")
   ),
-  tabPanel("page_14", 
-           "You like very orange cats!",
-           actionButton("page_143", 'Prev')
+  tabPanel("BENEFIT", 
+           "Does the project still provide some benefit to underserved communities?",
+           actionButton("BENEFIT_Yes", "Yes"), 
+           actionButton("BENEFIT_No", "No")
   ),
-  tabPanel("page_15", 
-           "You like not too orange cats!",
-           actionButton("page_153", 'Prev')
+  tabPanel("HOW", 
+           "How?",
+           actionButton("HOW_Title", "Includes students or teachers from Title 1 Schools"), 
+           actionButton("HOW_Stake", "Includes stakeholders from underserved communities"), 
+           actionButton("HOW_Know", "Increases knowledge of local equity issues"), 
+           actionButton("HOW_Barrier", "Reduces some barrier or driver leading to inequity"), 
+           actionButton("HOW_Else", "Something else"), 
+           actionButton("HOW_Unsure", "Unsure")
+  ),
+  tabPanel("SCALE", 
+           "Scale of project",
+           actionButton("SCALE_Bay", "Entire bay"), 
+           actionButton("SCALE_Segment", "Bay segment"), 
+           actionButton("SCALE_Watershed", "Entire watershed"), 
+           actionButton("SCALE_County", "County"), 
+           actionButton("SCALE_Municip", "Municipality"), 
+           actionButton("SCALE_Other", "Some other region")
+  ),
+  tabPanel("PROX-SHORE", 
+           "Do underserved communities make up 40% or more of the land area within 1 mile of the shoreline?",
+           actionButton("PROX-SHORE_Yes", "Yes"), 
+           actionButton("PROX-SHORE_No", "No"), 
+           actionButton("PROX-SHORE_Unsure", "Unsure")
+  ),
+  tabPanel("PROX-REGION", 
+           "Do underserved communities make up 40% or more of the land area in this region?",
+           actionButton("PROX-REGION_Yes", "Yes"), 
+           actionButton("PROX-REGION_No", "No"), 
+           actionButton("PROX-REGION_Unsure", "Unsure")
+  ),
+  tabPanel("ACCESS-REGION", 
+           "Is it reasonable to believe underserved communities would have (at least) equal access to the project's benefits as other communities?",
+           actionButton("ACCESS-REGION_Yes", "Yes"), 
+           actionButton("ACCESS-REGION_No", "No")
+  ),
+  tabPanel("INCLUDE", 
+           "INCLUDE: The project could be included in TBEP's contributions to the equity target.",
+           actionButton("STARTOVER", "Start over")
+  ),
+  tabPanel("ADAPT", 
+           "ADAPT: With some modification, the project could contribute to TBEP's equity target.",
+           actionButton("STARTOVER", "Start over")
+  ),
+  tabPanel("JUSTIFY", 
+           "JUSTIFY: The project likely won't contribute to TBEP's equity target. Report why it would be inappropriate or impossible for the project to contribute to the target.",
+           actionButton("STARTOVER", "Start over")
+  ),
+  tabPanel("INVESTIGATE", 
+           "INVESTIGATE: More data or evaluation is needed to determine if the project could contribute to TBEP's equity target.",
+           actionButton("STARTOVER", "Start over")
+  ),
+  tabPanel("CONSULT", 
+           "CONSULT: Consultation with relevant TBEP staff, experts, and/or stakeholders is recommended before continuing.",
+           actionButton("STARTOVER", "Start over")
+  ),
+  tabPanel("RECONSIDER", 
+           "RECONSIDER: The project may be inequitable or inappropriate, and therefore is not recommended for implementation.",
+           actionButton("STARTOVER", "Start over")
   )
 )
 
 switch_page <- function(i) {
-    updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
+    updateTabsetPanel(inputId = "wizard", selected = i)
   }
   
 # choices
-observeEvent(input$page_11, switch_page(2))
-observeEvent(input$page_12, switch_page(3))
-observeEvent(input$page_21, switch_page(4))
-observeEvent(input$page_22, switch_page(5))
-observeEvent(input$page_31, switch_page(6))
-observeEvent(input$page_32, switch_page(7))
-observeEvent(input$page_41, switch_page(8))
-observeEvent(input$page_42, switch_page(9))
-observeEvent(input$page_51, switch_page(10))
-observeEvent(input$page_52, switch_page(11))
-observeEvent(input$page_61, switch_page(12))
-observeEvent(input$page_62, switch_page(13))
-observeEvent(input$page_71, switch_page(14))
-observeEvent(input$page_72, switch_page(15))
+observeEvent(input$LOCATION_Yes, switch_page("ARCHSITE"))
+observeEvent(input$ARCHSITE_Yes, switch_page("ELIGIBLE"))
+observeEvent(input$ELIGIBLE_Yes, switch_page("REMAINS"))
+observeEvent(input$ELIGIBLE_No, switch_page("MULTIPLE"))
+observeEvent(input$ARCHSITE_No, switch_page("MULTIPLE"))
+observeEvent(input$MULTIPLE_Yes, switch_page("PROX-MULTIPLE"))
+observeEvent(input$PROX-MULTIPLE_Yes, switch_page("OUTCOME"))
+observeEvent(input$OUTCOME_No, switch_page("ACCESS-LOCAL"))
+observeEvent(input$PROX-SINGLE_Yes, switch_page("ACCESS-LOCAL"))
+observeEvent(input$ACCESS-LOCAL_Yes, switch_page("BURDEN"))
+observeEvent(input$BURDEN_Yes, switch_page("RECOGNITION"))
+observeEvent(input$WHY_Char, switch_page("RECOGNITION"))
+observeEvent(input$BURDEN_No, switch_page("WHY"))
+observeEvent(input$ACCESS-LOCAL_No, switch_page("IMPROVE"))
+observeEvent(input$ACCESS-REGION_No, switch_page("IMPROVE"))
+observeEvent(input$MULTIPLE_No, switch_page("PROX-SINGLE"))
+observeEvent(input$PROX-SINGLE_No, switch_page("BENEFIT"))
+observeEvent(input$BENEFIT_Yes, switch_page("HOW"))
+observeEvent(input$LOCATION_No, switch_page("SCALE"))
+observeEvent(input$SCALE_Bay, switch_page("PROX-SHORE"))
+observeEvent(input$SCALE_Segment, switch_page("PROX-SHORE"))
+observeEvent(input$SCALE_Watershed, switch_page("PROX-REGION"))
+observeEvent(input$SCALE_County, switch_page("PROX-REGION"))
+observeEvent(input$SCALE_Municipality, switch_page("PROX-REGION"))
+observeEvent(input$SCALE_Other, switch_page("PROX-REGION"))
+observeEvent(input$PROX-SHORE_No, switch_page("ACCESS-REGION"))
+observeEvent(input$PROX-REGION_No, switch_page("ACCESS-REGION"))
 
-# previous choices
-observeEvent(input$page_23, switch_page(1))
-observeEvent(input$page_33, switch_page(1))
-observeEvent(input$page_43, switch_page(2))
-observeEvent(input$page_53, switch_page(2))
-observeEvent(input$page_63, switch_page(3))
-observeEvent(input$page_73, switch_page(3))
-observeEvent(input$page_83, switch_page(4))
-observeEvent(input$page_93, switch_page(4))
-observeEvent(input$page_103, switch_page(5))
-observeEvent(input$page_113, switch_page(5))
-observeEvent(input$page_123, switch_page(6))
-observeEvent(input$page_133, switch_page(6))
-observeEvent(input$page_143, switch_page(7))
-observeEvent(input$page_153, switch_page(7))
+
+observeEvent(input$PROX-SHORE_Yes, switch_page("INCLUDE"))
+observeEvent(input$PROX-REGION_Yes, switch_page("INCLUDE"))
+observeEvent(input$ACCESS-REGION_Yes, switch_page("INCLUDE"))
+observeEvent(input$RECOGNITION_Yes, switch_page("INCLUDE"))
+observeEvent(input$HOW_Title, switch_page("INCLUDE"))
+observeEvent(input$HOW_Stake, switch_page("INCLUDE"))
+observeEvent(input$HOW_Know, switch_page("INCLUDE"))
+observeEvent(input$HOW_Barrier, switch_page("INCLUDE"))
+observeEvent(input$IMPROVE_Yes, switch_page("ADAPT"))
+observeEvent(input$RECOGNITION_No, switch_page("ADAPT"))
+observeEvent(input$IMPROVE_No, switch_page("JUSTIFY"))
+observeEvent(input$OUTCOME_Yes, switch_page("JUSTIFY"))
+observeEvent(input$BENEFIT_No, switch_page("JUSTIFY"))
+observeEvent(input$PROX-MULTIPLE_No, switch_page("JUSTIFY"))
+observeEvent(input$PROX-REGION_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$PROX-SHORE_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$RECOGNITION_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$HOW_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$WHY_Data, switch_page("INVESTIGATE"))
+observeEvent(input$ARCHSITE_Unsure, switch_page("CONSULT"))
+observeEvent(input$REMAINS_No, switch_page("CONSULT"))
+observeEvent(input$HOW_Else, switch_page("CONSULT"))
+observeEvent(input$REMAINS_Yes, switch_page("RECONSIDER"))
+
+observeEvent(input$STARTOVER, switch_page("LOCATION"))
+
 ```
 
 
