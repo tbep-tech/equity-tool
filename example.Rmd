@@ -1,0 +1,142 @@
+---
+title: "EXAMPLE"
+output: 
+  flexdashboard::flex_dashboard:
+    logo: img/tarponlogo.png
+    social: menu
+    source_code: "https://github.com/tbep-tech/equity-tool"
+runtime: shiny
+css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+
+# libraries
+library(flexdashboard)
+library(shiny)
+```
+
+Overview
+===========================================================
+
+Column {data-width=700}
+-----------------------------------------------------------------------
+
+```{r}
+tabsetPanel(
+  id = "wizard",
+  type = "hidden",
+  tabPanel("page_1", 
+           "Which do you prefer?",
+           actionButton("page_11", "dogs"), 
+           actionButton("page_12", 'cats')
+  ),
+  tabPanel("page_2", 
+           "What kind of dogs?",
+           actionButton("page_21", "big"),
+           actionButton("page_22", "small"),
+           actionButton("page_23", 'Prev')
+  ),
+  tabPanel("page_3", 
+           "What kind of cats",
+           actionButton("page_31", "fluffy"),
+           actionButton("page_32", "orange"),
+           actionButton("page_33", 'Prev')
+  ),
+  tabPanel("page_4", 
+           "What kind of big dogs?",
+           actionButton("page_41", "very big"),
+           actionButton("page_42", "not too big"),
+           actionButton("page_43", 'Prev')
+  ),
+  tabPanel("page_5", 
+           "What kind of small dogs?",
+           actionButton("page_51", "very small"),
+           actionButton("page_52", "not too small"),
+           actionButton("page_53", 'Prev')
+  ),
+  tabPanel("page_6", 
+           "What kind of fluffy cats?",
+           actionButton("page_61", "very fluffy"),
+           actionButton("page_62", "not too fluffy"),
+           actionButton("page_63", 'Prev')
+  ),
+  tabPanel("page_7", 
+           "What kind of orange cats?",
+           actionButton("page_71", "very orange"),
+           actionButton("page_72", "not too orange"),
+           actionButton("page_73", 'Prev')
+  ),
+  tabPanel("page_8", 
+           "You like very big dogs!",
+           actionButton("page_83", 'Prev')
+  ),
+  tabPanel("page_9", 
+           "You like not too big dogs!",
+           actionButton("page_93", 'Prev')
+  ),
+  tabPanel("page_10", 
+           "You like very small dogs!",
+           actionButton("page_103", 'Prev')
+  ),
+  tabPanel("page_11", 
+           "You like not too small dogs!",
+           actionButton("page_113", 'Prev')
+  ),
+  tabPanel("page_12", 
+           "You like very fluffy cats!",
+           actionButton("page_123", 'Prev')
+  ),
+  tabPanel("page_13", 
+           "You like not too fluffy cats!",
+           actionButton("page_133", 'Prev')
+  ),
+  tabPanel("page_14", 
+           "You like very orange cats!",
+           actionButton("page_143", 'Prev')
+  ),
+  tabPanel("page_15", 
+           "You like not too orange cats!",
+           actionButton("page_153", 'Prev')
+  )
+)
+
+switch_page <- function(i) {
+    updateTabsetPanel(inputId = "wizard", selected = paste0("page_", i))
+  }
+  
+# choices
+observeEvent(input$page_11, switch_page(2))
+observeEvent(input$page_12, switch_page(3))
+observeEvent(input$page_21, switch_page(4))
+observeEvent(input$page_22, switch_page(5))
+observeEvent(input$page_31, switch_page(6))
+observeEvent(input$page_32, switch_page(7))
+observeEvent(input$page_41, switch_page(8))
+observeEvent(input$page_42, switch_page(9))
+observeEvent(input$page_51, switch_page(10))
+observeEvent(input$page_52, switch_page(11))
+observeEvent(input$page_61, switch_page(12))
+observeEvent(input$page_62, switch_page(13))
+observeEvent(input$page_71, switch_page(14))
+observeEvent(input$page_72, switch_page(15))
+
+# previous choices
+observeEvent(input$page_23, switch_page(1))
+observeEvent(input$page_33, switch_page(1))
+observeEvent(input$page_43, switch_page(2))
+observeEvent(input$page_53, switch_page(2))
+observeEvent(input$page_63, switch_page(3))
+observeEvent(input$page_73, switch_page(3))
+observeEvent(input$page_83, switch_page(4))
+observeEvent(input$page_93, switch_page(4))
+observeEvent(input$page_103, switch_page(5))
+observeEvent(input$page_113, switch_page(5))
+observeEvent(input$page_123, switch_page(6))
+observeEvent(input$page_133, switch_page(6))
+observeEvent(input$page_143, switch_page(7))
+observeEvent(input$page_153, switch_page(7))
+```
+
+
