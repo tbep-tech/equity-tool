@@ -20,96 +20,117 @@ library(shiny)
 Overview
 ===========================================================
 
-Column {data-width=700}
+Column {data-width=50}
 -----------------------------------------------------------------------
+
+<div class = "row">
+<div class = "col-md-2"></div>
+<div class = "col-md-9">
+
+</div>
+<div class = "col-md-2"></div>
+</div>
+
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+<div class = "row">
+<div class = "col-md-2"></div>
+<div class = "col-md-10">
 
 ```{r}
 tabsetPanel(
   id = "wizard",
   type = "hidden",
   tabPanel("LOCATION", 
-           "Is the project associated with a specific location?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is the project associated with a specific location?<br/><br/>"),
            actionButton("LOCATION_Yes", "Yes"), 
            actionButton("LOCATION_No", "No")
   ),
   tabPanel("ARCHSITE", 
-           "Is the project within 50 meters of an archaeological site mapped by the Florida Master Site?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is the project within 50 meters of an archaeological site mapped by the Florida Master Site?<br/><br/>"),
            actionButton("ARCHSITE_Yes", "Yes"), 
            actionButton("ARCHSITE_No", "No"), 
            actionButton("ARCHSITE_Unsure", "Unsure")
   ),
   tabPanel("ELIGIBLE", 
-           "Is the site listed on or potentially eligible for the National Registry?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is the site listed on or potentially eligible for the National Registry?<br/><br/>"),
            actionButton("ELIGIBLE_Yes", "Yes"), 
            actionButton("ELIGIBLE_No", "No")
   ),
   tabPanel("REMAINS", 
-           "Does the site contain human remains?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Does the site contain human remains?<br/><br/>"),
            actionButton("REMAINS_Yes", "Yes"), 
            actionButton("REMAINS_No", "No")
   ),
   tabPanel("MULTIPLE", 
-           "Could the project be suitable for multiple locations?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Could the project be suitable for multiple locations?<br/><br/>"),
            actionButton("MULTIPLE_Yes", "Yes"), 
            actionButton("MULTIPLE_No", "No")
   ),
-  tabPanel("PROX-MULTIPLE", 
-           "Is one of those locations within 1 mile or directly upstream of an underserved community?",
-           actionButton("MULTIPLE_Yes", "Yes"), 
-           actionButton("MULTIPLE_No", "No")
+  tabPanel("PROX_MULTIPLE", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is one of those locations within 1 mile or directly upstream of an underserved community?<br/><br/>"),
+           actionButton("PROX_MULTIPLE_Yes", "Yes"), 
+           actionButton("PROX_MULTIPLE_No", "No")
   ),
   tabPanel("OUTCOME", 
-           "Would outcomes be significantly reduced if placed near the underserved community?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Would outcomes be significantly reduced if placed near the underserved community?<br/><br/>"),
            actionButton("OUTCOME_Yes", "Yes"), 
            actionButton("OUTCOME_No", "No")
   ),
-  tabPanel("ACCESS-LOCAL", 
-           "Is it reasonable to believe underserved communities would have (at least) equal access to the project's benefits as other communities?",
-           actionButton("ACCESS-LOCAL_Yes", "Yes"), 
-           actionButton("ACCESS-LOCAL_No", "No")
+  tabPanel("ACCESS_LOCAL", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is it reasonable to believe underserved communities would have (at least) equal access to the project's benefits as other communities?<br/><br/>"),
+           actionButton("ACCESS_LOCAL_Yes", "Yes"), 
+           actionButton("ACCESS_LOCAL_No", "No")
   ),
   tabPanel("BURDEN", 
-           "Could the project help mitigate an environmental burden flagged in the underserved community?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Could the project help mitigate an environmental burden flagged in the underserved community?<br/><br/>"),
            actionButton("BURDEN_Yes", "Yes"), 
            actionButton("BURDEN_No", "No")
   ),
   tabPanel("RECOGNITION", 
-           "Do the project benefits align with reported values, needs, or priorities of the community?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do the project benefits align with reported values, needs, or priorities of the community?<br/><br/>"),
            actionButton("RECOGNITION_Yes", "Yes"), 
            actionButton("RECOGNITION_No", "No"), 
            actionButton("RECOGNITION_Unsure", "Unsure")
   ),
   tabPanel("WHY", 
-           "Why not?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Why not?<br/><br/>"),
            actionButton("WHY_Char", "Due to project characteristics"), 
            actionButton("WHY_Data", "Due to lack of data or information")
   ),
   tabPanel("IMPROVE", 
-           "Could access be reasonably improved without significantly reducing project outcomes or increasing timelines?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Could access be reasonably improved without significantly reducing project outcomes or increasing timelines?<br/><br/>"),
            actionButton("IMPROVE_Yes", "Yes"), 
            actionButton("IMPROVE_No", "No")
   ),
-  tabPanel("PROX-SINGLE", 
-           "Is the project located within 1 mile or directly upstream of an underserved community?",
-           actionButton("PROX-SINGLE_Yes", "Yes"), 
-           actionButton("PROX-SINGLE_No", "No")
+  tabPanel("PROX_SINGLE", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is the project located within 1 mile or directly upstream of an underserved community?<br/><br/>"),
+           actionButton("PROX_SINGLE_Yes", "Yes"), 
+           actionButton("PROX_SINGLE_No", "No")
   ),
   tabPanel("BENEFIT", 
-           "Does the project still provide some benefit to underserved communities?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Does the project still provide some benefit to underserved communities?<br/><br/>"),
            actionButton("BENEFIT_Yes", "Yes"), 
            actionButton("BENEFIT_No", "No")
   ),
   tabPanel("HOW", 
-           "How?",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>How?<br/><br/>"),
            actionButton("HOW_Title", "Includes students or teachers from Title 1 Schools"), 
+           HTML("<br/><br/>"),
            actionButton("HOW_Stake", "Includes stakeholders from underserved communities"), 
+           HTML("<br/><br/>"),
            actionButton("HOW_Know", "Increases knowledge of local equity issues"), 
+           HTML("<br/><br/>"),
            actionButton("HOW_Barrier", "Reduces some barrier or driver leading to inequity"), 
+           HTML("<br/><br/>"),
            actionButton("HOW_Else", "Something else"), 
+           HTML("<br/><br/>"),
            actionButton("HOW_Unsure", "Unsure")
   ),
   tabPanel("SCALE", 
-           "Scale of project",
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>What is the scale of the project?<br/><br/>"),
            actionButton("SCALE_Bay", "Entire bay"), 
            actionButton("SCALE_Segment", "Bay segment"), 
            actionButton("SCALE_Watershed", "Entire watershed"), 
@@ -117,46 +138,50 @@ tabsetPanel(
            actionButton("SCALE_Municip", "Municipality"), 
            actionButton("SCALE_Other", "Some other region")
   ),
-  tabPanel("PROX-SHORE", 
-           "Do underserved communities make up 40% or more of the land area within 1 mile of the shoreline?",
-           actionButton("PROX-SHORE_Yes", "Yes"), 
-           actionButton("PROX-SHORE_No", "No"), 
-           actionButton("PROX-SHORE_Unsure", "Unsure")
+  tabPanel("PROX_SHORE", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area within 1 mile of the shoreline?<br/><br/>"),
+           actionButton("PROX_SHORE_Yes", "Yes"), 
+           actionButton("PROX_SHORE_No", "No"), 
+           actionButton("PROX_SHORE_Unsure", "Unsure")
   ),
-  tabPanel("PROX-REGION", 
-           "Do underserved communities make up 40% or more of the land area in this region?",
-           actionButton("PROX-REGION_Yes", "Yes"), 
-           actionButton("PROX-REGION_No", "No"), 
-           actionButton("PROX-REGION_Unsure", "Unsure")
+  tabPanel("PROX_REGION", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
+           actionButton("PROX_REGION_Yes", "Yes"), 
+           actionButton("PROX_REGION_No", "No"), 
+           actionButton("PROX_REGION_Unsure", "Unsure")
   ),
-  tabPanel("ACCESS-REGION", 
-           "Is it reasonable to believe underserved communities would have (at least) equal access to the project's benefits as other communities?",
-           actionButton("ACCESS-REGION_Yes", "Yes"), 
-           actionButton("ACCESS-REGION_No", "No")
+  tabPanel("ACCESS_REGION", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is it reasonable to believe underserved communities would have (at least) equal access to the project's benefits as other communities?<br/><br/>"),
+           actionButton("ACCESS_REGION_Yes", "Yes"), 
+           actionButton("ACCESS_REGION_No", "No")
   ),
   tabPanel("INCLUDE", 
-           "INCLUDE: The project could be included in TBEP's contributions to the equity target.",
-           actionButton("STARTOVER", "Start over")
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>INCLUDE</font></b> <br/>The project could be included in TBEP's contributions to the equity target.<br/><br/>"),
+           actionButton("STARTOVER_INC", "Start over")
   ),
   tabPanel("ADAPT", 
-           "ADAPT: With some modification, the project could contribute to TBEP's equity target.",
-           actionButton("STARTOVER", "Start over")
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>ADAPT</font></b> <br/>With some modification, the project could contribute to TBEP's equity target.<br/><br/>"),
+           actionButton("STARTOVER_A", "Start over")
   ),
   tabPanel("JUSTIFY", 
-           "JUSTIFY: The project likely won't contribute to TBEP's equity target. Report why it would be inappropriate or impossible for the project to contribute to the target.",
-           actionButton("STARTOVER", "Start over")
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>JUSTIFY</font></b> <br/>The project likely won't contribute to TBEP's equity target. Report why it would be inappropriate or impossible for the project to contribute to the target.<br/><br/>"),
+           actionButton("STARTOVER_J", "Start over")
   ),
   tabPanel("INVESTIGATE", 
-           "INVESTIGATE: More data or evaluation is needed to determine if the project could contribute to TBEP's equity target.",
-           actionButton("STARTOVER", "Start over")
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>INVESTIGATE</font></b> <br/>More data or evaluation is needed to determine if the project could contribute to TBEP's equity target.<br/><br/>"),
+           actionButton("STARTOVER_INV", "Start over")
   ),
   tabPanel("CONSULT", 
-           "CONSULT: Consultation with relevant TBEP staff, experts, and/or stakeholders is recommended before continuing.",
-           actionButton("STARTOVER", "Start over")
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>CONSULT</font></b> <br/>Consultation with relevant TBEP staff, experts, and/or stakeholders is recommended before continuing.<br/><br/>"),
+           actionButton("STARTOVER_C", "Start over")
+  ),
+  tabPanel("CONSULT_ARCH", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>CONSULT</font></b> <br/>Consultation with relevant TBEP staff, experts, and/or stakeholders is recommended before continuing.<br/><br/><i>TBEP staff are unable to share data regarding the locations of sensitive archaeological sites in Tampa Bay with members of the public. However, we would be happy to work with you to determine if your project might be located near one of these sensitive areas. Please contact Dr. Blake Simmons (bsimmons@tbep.org) to determine the answer to this question.<br/><br/>Most projects will not be located near one of these archaeological sites. While you wait for this information, you can start this tool again, answering 'No' to this question, so that you can continue to assess the applicability of your project for our equity target.</i><br/><br/>"),
+           actionButton("STARTOVER_CARCH", "Start over")
   ),
   tabPanel("RECONSIDER", 
-           "RECONSIDER: The project may be inequitable or inappropriate, and therefore is not recommended for implementation.",
-           actionButton("STARTOVER", "Start over")
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>RECONSIDER</font></b> <br/>The project may be inequitable or inappropriate, and therefore is not recommended for implementation.<br/><br/>"),
+           actionButton("STARTOVER_R", "Start over")
   )
 )
 
@@ -170,33 +195,33 @@ observeEvent(input$ARCHSITE_Yes, switch_page("ELIGIBLE"))
 observeEvent(input$ELIGIBLE_Yes, switch_page("REMAINS"))
 observeEvent(input$ELIGIBLE_No, switch_page("MULTIPLE"))
 observeEvent(input$ARCHSITE_No, switch_page("MULTIPLE"))
-observeEvent(input$MULTIPLE_Yes, switch_page("PROX-MULTIPLE"))
-observeEvent(input$PROX-MULTIPLE_Yes, switch_page("OUTCOME"))
-observeEvent(input$OUTCOME_No, switch_page("ACCESS-LOCAL"))
-observeEvent(input$PROX-SINGLE_Yes, switch_page("ACCESS-LOCAL"))
-observeEvent(input$ACCESS-LOCAL_Yes, switch_page("BURDEN"))
+observeEvent(input$MULTIPLE_Yes, switch_page("PROX_MULTIPLE"))
+observeEvent(input$PROX_MULTIPLE_Yes, switch_page("OUTCOME"))
+observeEvent(input$OUTCOME_No, switch_page("ACCESS_LOCAL"))
+observeEvent(input$PROX_SINGLE_Yes, switch_page("ACCESS_LOCAL"))
+observeEvent(input$ACCESS_LOCAL_Yes, switch_page("BURDEN"))
 observeEvent(input$BURDEN_Yes, switch_page("RECOGNITION"))
 observeEvent(input$WHY_Char, switch_page("RECOGNITION"))
 observeEvent(input$BURDEN_No, switch_page("WHY"))
-observeEvent(input$ACCESS-LOCAL_No, switch_page("IMPROVE"))
-observeEvent(input$ACCESS-REGION_No, switch_page("IMPROVE"))
-observeEvent(input$MULTIPLE_No, switch_page("PROX-SINGLE"))
-observeEvent(input$PROX-SINGLE_No, switch_page("BENEFIT"))
+observeEvent(input$ACCESS_LOCAL_No, switch_page("IMPROVE"))
+observeEvent(input$ACCESS_REGION_No, switch_page("IMPROVE"))
+observeEvent(input$MULTIPLE_No, switch_page("PROX_SINGLE"))
+observeEvent(input$PROX_SINGLE_No, switch_page("BENEFIT"))
 observeEvent(input$BENEFIT_Yes, switch_page("HOW"))
 observeEvent(input$LOCATION_No, switch_page("SCALE"))
-observeEvent(input$SCALE_Bay, switch_page("PROX-SHORE"))
-observeEvent(input$SCALE_Segment, switch_page("PROX-SHORE"))
-observeEvent(input$SCALE_Watershed, switch_page("PROX-REGION"))
-observeEvent(input$SCALE_County, switch_page("PROX-REGION"))
-observeEvent(input$SCALE_Municipality, switch_page("PROX-REGION"))
-observeEvent(input$SCALE_Other, switch_page("PROX-REGION"))
-observeEvent(input$PROX-SHORE_No, switch_page("ACCESS-REGION"))
-observeEvent(input$PROX-REGION_No, switch_page("ACCESS-REGION"))
+observeEvent(input$SCALE_Bay, switch_page("PROX_SHORE"))
+observeEvent(input$SCALE_Segment, switch_page("PROX_SHORE"))
+observeEvent(input$SCALE_Watershed, switch_page("PROX_REGION"))
+observeEvent(input$SCALE_County, switch_page("PROX_REGION"))
+observeEvent(input$SCALE_Municipality, switch_page("PROX_REGION"))
+observeEvent(input$SCALE_Other, switch_page("PROX_REGION"))
+observeEvent(input$PROX_SHORE_No, switch_page("ACCESS_REGION"))
+observeEvent(input$PROX_REGION_No, switch_page("ACCESS_REGION"))
 
 
-observeEvent(input$PROX-SHORE_Yes, switch_page("INCLUDE"))
-observeEvent(input$PROX-REGION_Yes, switch_page("INCLUDE"))
-observeEvent(input$ACCESS-REGION_Yes, switch_page("INCLUDE"))
+observeEvent(input$PROX_SHORE_Yes, switch_page("INCLUDE"))
+observeEvent(input$PROX_REGION_Yes, switch_page("INCLUDE"))
+observeEvent(input$ACCESS_REGION_Yes, switch_page("INCLUDE"))
 observeEvent(input$RECOGNITION_Yes, switch_page("INCLUDE"))
 observeEvent(input$HOW_Title, switch_page("INCLUDE"))
 observeEvent(input$HOW_Stake, switch_page("INCLUDE"))
@@ -207,19 +232,40 @@ observeEvent(input$RECOGNITION_No, switch_page("ADAPT"))
 observeEvent(input$IMPROVE_No, switch_page("JUSTIFY"))
 observeEvent(input$OUTCOME_Yes, switch_page("JUSTIFY"))
 observeEvent(input$BENEFIT_No, switch_page("JUSTIFY"))
-observeEvent(input$PROX-MULTIPLE_No, switch_page("JUSTIFY"))
-observeEvent(input$PROX-REGION_Unsure, switch_page("INVESTIGATE"))
-observeEvent(input$PROX-SHORE_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$PROX_MULTIPLE_No, switch_page("JUSTIFY"))
+observeEvent(input$PROX_REGION_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$PROX_SHORE_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$RECOGNITION_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$HOW_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$WHY_Data, switch_page("INVESTIGATE"))
-observeEvent(input$ARCHSITE_Unsure, switch_page("CONSULT"))
+observeEvent(input$ARCHSITE_Unsure, switch_page("CONSULT_ARCH"))
 observeEvent(input$REMAINS_No, switch_page("CONSULT"))
 observeEvent(input$HOW_Else, switch_page("CONSULT"))
 observeEvent(input$REMAINS_Yes, switch_page("RECONSIDER"))
 
-observeEvent(input$STARTOVER, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_INC, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_INV, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_A, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_J, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_C, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_CARCH, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_R, switch_page("LOCATION"))
 
 ```
 
+</div>
+<div class = "col-md-2"></div>
+</div>
+
+
+Column {data-width=125}
+-----------------------------------------------------------------------
+
+<div class = "row">
+<div class = "col-md-2"></div>
+<div class = "col-md-9">
+
+</div>
+<div class = "col-md-2"></div>
+</div>
 
