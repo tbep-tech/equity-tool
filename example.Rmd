@@ -140,17 +140,43 @@ tabsetPanel(
            actionButton("SCALE_Municip", "Municipality"), 
            actionButton("SCALE_Other", "Some other region")
   ),
-  tabPanel("PROX_SHORE", 
+  tabPanel("PROX_SHORE_BAY", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area within 1 mile of the shoreline?<br/><br/>"),
-           actionButton("PROX_SHORE_Yes", "Yes"), 
-           actionButton("PROX_SHORE_No", "No"), 
-           actionButton("PROX_SHORE_Unsure", "Unsure")
+           actionButton("PROX_SHORE_BAY_Yes", "Yes"), 
+           actionButton("PROX_SHORE_BAY_No", "No"), 
+           actionButton("PROX_SHORE_BAY_Unsure", "Unsure"),
+           HTML("<br/>Put some text here<br/><br/>"),
+           HTML("<img src = 'img/tarponlogo.png'>")
   ),
-  tabPanel("PROX_REGION", 
+  tabPanel("PROX_SHORE_BAYSEG", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area within 1 mile of the shoreline?<br/><br/>"),
+           actionButton("PROX_SHORE_BAYSEG_Yes", "Yes"), 
+           actionButton("PROX_SHORE_BAYSEG_No", "No"), 
+           actionButton("PROX_SHORE_BAYSEG_Unsure", "Unsure")
+  ),
+  tabPanel("PROX_REGION_WATERSHED", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
-           actionButton("PROX_REGION_Yes", "Yes"), 
-           actionButton("PROX_REGION_No", "No"), 
-           actionButton("PROX_REGION_Unsure", "Unsure")
+           actionButton("PROX_REGION_WATERSHED_Yes", "Yes"), 
+           actionButton("PROX_REGION_WATERSHED_No", "No"), 
+           actionButton("PROX_REGION_WATERSHED_Unsure", "Unsure")
+  ),
+  tabPanel("PROX_REGION_COUNTY", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
+           actionButton("PROX_REGION_COUNTY_Yes", "Yes"), 
+           actionButton("PROX_REGION_COUNTY_No", "No"), 
+           actionButton("PROX_REGION_COUNTY_Unsure", "Unsure")
+  ),
+  tabPanel("PROX_REGION_CITY", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
+           actionButton("PROX_REGION_CITY_Yes", "Yes"), 
+           actionButton("PROX_REGION_CITY_No", "No"), 
+           actionButton("PROX_REGION_CITY_Unsure", "Unsure")
+  ),
+  tabPanel("PROX_REGION_OTHER", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
+           actionButton("PROX_REGION_OTHER_Yes", "Yes"), 
+           actionButton("PROX_REGION_OTHER_No", "No"), 
+           actionButton("PROX_REGION_OTHER_Unsure", "Unsure")
   ),
   tabPanel("ACCESS_REGION", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is it reasonable to believe underserved communities would have (at least) equal access to the project's benefits as other communities?<br/><br/>"),
@@ -211,14 +237,18 @@ observeEvent(input$MULTIPLE_No, switch_page("PROX_SINGLE"))
 observeEvent(input$PROX_SINGLE_No, switch_page("BENEFIT"))
 observeEvent(input$BENEFIT_Yes, switch_page("HOW"))
 observeEvent(input$LOCATION_No, switch_page("SCALE"))
-observeEvent(input$SCALE_Bay, switch_page("PROX_SHORE"))
-observeEvent(input$SCALE_Segment, switch_page("PROX_SHORE"))
-observeEvent(input$SCALE_Watershed, switch_page("PROX_REGION"))
-observeEvent(input$SCALE_County, switch_page("PROX_REGION"))
-observeEvent(input$SCALE_Municipality, switch_page("PROX_REGION"))
-observeEvent(input$SCALE_Other, switch_page("PROX_REGION"))
-observeEvent(input$PROX_SHORE_No, switch_page("ACCESS_REGION"))
-observeEvent(input$PROX_REGION_No, switch_page("ACCESS_REGION"))
+observeEvent(input$SCALE_Bay, switch_page("PROX_SHORE_BAY"))
+observeEvent(input$SCALE_Segment, switch_page("PROX_SHORE_BAYSEG"))
+observeEvent(input$SCALE_Watershed, switch_page("PROX_REGION_WATERSHED"))
+observeEvent(input$SCALE_County, switch_page("PROX_REGION_COUNTY"))
+observeEvent(input$SCALE_Municipality, switch_page("PROX_REGION_CITY"))
+observeEvent(input$SCALE_Other, switch_page("PROX_REGION_OTHER"))
+observeEvent(input$PROX_SHORE_BAY_No, switch_page("ACCESS_REGION"))
+observeEvent(input$PROX_SHORE_BAYSEG_No, switch_page("ACCESS_REGION"))
+observeEvent(input$PROX_REGION_WATERSHED_No, switch_page("ACCESS_REGION"))
+observeEvent(input$PROX_REGION_COUNTY_No, switch_page("ACCESS_REGION"))
+observeEvent(input$PROX_REGION_CITY_No, switch_page("ACCESS_REGION"))
+observeEvent(input$PROX_REGION_OTHER_No, switch_page("ACCESS_REGION"))
 
 
 observeEvent(input$PROX_SHORE_Yes, switch_page("INCLUDE"))
@@ -235,8 +265,12 @@ observeEvent(input$IMPROVE_No, switch_page("JUSTIFY"))
 observeEvent(input$OUTCOME_Yes, switch_page("JUSTIFY"))
 observeEvent(input$BENEFIT_No, switch_page("JUSTIFY"))
 observeEvent(input$PROX_MULTIPLE_No, switch_page("JUSTIFY"))
-observeEvent(input$PROX_REGION_Unsure, switch_page("INVESTIGATE"))
-observeEvent(input$PROX_SHORE_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$PROX_REGION_WATERSHED_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$PROX_REGION_COUNTY_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$PROX_REGION_CITY_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$PROX_REGION_OTHER_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$PROX_SHORE_BAY_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$PROX_SHORE_BAYSEG_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$RECOGNITION_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$HOW_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$WHY_Data, switch_page("INVESTIGATE"))
