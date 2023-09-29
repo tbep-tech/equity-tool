@@ -1,5 +1,5 @@
 ---
-title: "EXAMPLE"
+title: "EQUITY DECISION SUPPORT TOOL"
 output: 
   flexdashboard::flex_dashboard:
     logo: img/tarponlogo.png
@@ -137,7 +137,7 @@ tabsetPanel(
            actionButton("SCALE_Segment", "Bay segment"), 
            actionButton("SCALE_Watershed", "Entire watershed"), 
            actionButton("SCALE_County", "County"), 
-           actionButton("SCALE_Municip", "Municipality"), 
+           actionButton("SCALE_Municipality", "Municipality"), 
            actionButton("SCALE_Other", "Some other region")
   ),
   tabPanel("PROX_SHORE_BAY", 
@@ -145,32 +145,40 @@ tabsetPanel(
            actionButton("PROX_SHORE_BAY_Yes", "Yes"), 
            actionButton("PROX_SHORE_BAY_No", "No"), 
            actionButton("PROX_SHORE_BAY_Unsure", "Unsure"),
-           HTML("<br/>Put some text here<br/><br/>"),
-           HTML("<img src = 'img/tarponlogo.png'>")
+           HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
+           HTML("<img src = 'img/bay.png' width = '90%'>")
   ),
   tabPanel("PROX_SHORE_BAYSEG", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area within 1 mile of the shoreline?<br/><br/>"),
            actionButton("PROX_SHORE_BAYSEG_Yes", "Yes"), 
            actionButton("PROX_SHORE_BAYSEG_No", "No"), 
-           actionButton("PROX_SHORE_BAYSEG_Unsure", "Unsure")
+           actionButton("PROX_SHORE_BAYSEG_Unsure", "Unsure"),
+           HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
+           HTML("<img src = 'img/bayseg.png' width = '90%'>")
   ),
   tabPanel("PROX_REGION_WATERSHED", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
            actionButton("PROX_REGION_WATERSHED_Yes", "Yes"), 
            actionButton("PROX_REGION_WATERSHED_No", "No"), 
-           actionButton("PROX_REGION_WATERSHED_Unsure", "Unsure")
+           actionButton("PROX_REGION_WATERSHED_Unsure", "Unsure"),
+           HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
+           HTML("<img src = 'img/watershed.png' width = '90%'>")
   ),
   tabPanel("PROX_REGION_COUNTY", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
            actionButton("PROX_REGION_COUNTY_Yes", "Yes"), 
            actionButton("PROX_REGION_COUNTY_No", "No"), 
-           actionButton("PROX_REGION_COUNTY_Unsure", "Unsure")
+           actionButton("PROX_REGION_COUNTY_Unsure", "Unsure"),
+           HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
+           HTML("<img src = 'img/counties.png' width = '90%'>")
   ),
   tabPanel("PROX_REGION_CITY", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
            actionButton("PROX_REGION_CITY_Yes", "Yes"), 
            actionButton("PROX_REGION_CITY_No", "No"), 
-           actionButton("PROX_REGION_CITY_Unsure", "Unsure")
+           actionButton("PROX_REGION_CITY_Unsure", "Unsure"),
+           HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
+           HTML("<img src = 'img/cities.png' width = '90%'>")
   ),
   tabPanel("PROX_REGION_OTHER", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
