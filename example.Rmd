@@ -441,8 +441,9 @@ The map below shows the locations of underserved communities, areas within 1 mil
 ```{r}
 load(file = 'data/tb_equity.RData')
 load(file = 'data/tb_flowlines.RData')
+load(file = 'data/buffer_under.RData')
 
-mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities") + mapview(tb_flowlines, col.regions = "blue", layer.name = "Flowlines") + mapview(under_buffer, col.regions = "red", layer.name = "1 mile buffer")
+mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities") + mapview(tb_flowlines, col.regions = "blue", layer.name = "Flowlines") + mapview(buffer_under, col.regions = "red", layer.name = "1 mile buffer")
 ```
 
 
