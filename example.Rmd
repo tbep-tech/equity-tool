@@ -444,6 +444,26 @@ load(file = 'data/tb_flowlines.RData')
 load(file = 'data/buffer_under.RData')
 
 mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities") + mapview(tb_flowlines, col.regions = "blue", layer.name = "Flowlines") + mapview(buffer_under, col.regions = "red", layer.name = "1 mile buffer")
+
+# Entire bay
+mapview(bay, col.regions = "red", layer.name = "Tampa Bay Shoreline (1 mile)") + mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
+
+# Bay segments
+mapview(bayseg, zcol = "BAY_SEG", col.regions = list("red","orange","yellow","green","blue","violet","brown"), layer.name = "Bay Segment Shoreline (1 mile)", label = "BAY_SEG") + 
+  mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
+
+# Counties
+mapview(county, zcol = "NAME", col.regions = list("red","orange","yellow","green","blue","violet"), layer.name = "County (Watershed Boundary)", label = "NAME") + 
+  mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
+
+# Cities
+mapview(city, zcol = "minorciv_1", layer.name = "Municipalities (Watershed Boundary)", label = "minorciv_1") + 
+  mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
+
+# Watershed
+mapview(watershed, layer.name = "Tampa Bay Watershed") + 
+  mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
+
 ```
 
 
