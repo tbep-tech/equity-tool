@@ -34,19 +34,28 @@ Column {data-width=700}
 
 <font size='+2'><font color='#004F7E'><b>Overview of TBEP's Equity Decision Support Tool</b></font></font>
 
-Tampa Bay is a 400-square-mile estuary situated along the west coast of Florida in the second-most populous region in the state. Tampa Bay is an estuary of national significance and is of vital importance to the surrounding region's economy. The natural resources of Tampa Bay support essential industries such as tourism, mineral extraction, marine transportation, and other commercial and recreational activities. Additionally, the Tampa Bay watershed is comprised of rich and diverse habitats that provide ecosystem services and community benefits that enhance the quality of life.
-<br>
+In line with the Justice40 Initiative, the Tampa Bay Estuary Program has a goal to ensure at least 40% of projects funded by the Bipartisan Infrastructure Law (BIL) benefit underserved communities in the Tampa Bay watershed. However, we hope to apply this equity target more broadly to all TBEP projects and CCMP actions, including research, outreach, and education activities. 
+
+To help us achieve this goal, the TBEP Equity Decision Support Tool was created to assist TBEP's staff, partners, and grant applicants in evaluating and reporting the potential contributions of proposed projects to TBEP's equity target. <br>
 <br>
 
 #### What is the purpose of this tool?
 
-The purpose of the Economic Valuation of Tampa Bay is to provide an economic valuation of the natural resources in Tampa Bay and its watershed. The results demonstrate the Tampa Bay estuary’s value in providing substantial economic, social, and environmental benefits to the region’s industries, residents, and visitors. Moreover, the methodologies established herein provide a replicable process for performing a valuation of Tampa Bay.
-<br>
+Decision support tools are designed to assist decision-makers in making informed, consistent, and transparent decisions with ease. Decision science has consistently shown that these tools improve the ability of individuals to make consistent decisions over time, as well as improve the consistency of decisions across multiple decision-makers. Particularly for decisions about complex topics or topics requiring specific expertise, a decision support tool can make it easier for decision-makers to consider all of the relevant dimensions of a topic regardless of their experience or expertise.
+
+The Equity Decision Support Tool has been designed to help any decision-maker determine if a proposed project could contribute to TBEP's equity target. The tool can be used by both experts and novices in the topic of social equity, as it walks the decision-maker through a simple evaluation of distributive, procedural, and recognitional equity of the proposed project. After answering a series of questions about the project, the tool concludes with either (1) an  assessment of the project's potential contribution to the equity target, or (2) recommendations for adapting the project or doing some additional investigation and/or consultation about the project. 
+
+Importantly, this is a decision support tool, not a decision <i>making</i> tool. Decision-makers should always use their best judgement in making decisions, which may include considerations of context and other factors that cannot be accounted for by this tool. We encourage decision-makers to consider and report the results from this tool, and build upon these results with additional arguments for or against including the project in TBEP's contributions to the equity target.
+
 <br>
 
 #### How do you use the tool?
 
-Methodological summaries for each of these three analyses can be found in the Methods pages. For more detailed information regarding data sources, calculations, modeling, and results, consult the full 2023 Economic Valuation of Tampa Bay report, which can be downloaded using the link on the right side of this page.
+The Equity Decision Support Tool presents the user with a series of questions about the project. The majority of these questions only require a simple 'Yes' or 'No' answer. Based on the answer, the tool directs the user to the relevant follow-up question or evaluation/recommendation.
+
+Many of the questions require specific knowledge regarding (1) the location of the project, (2) the expected benefits of the project, and (3) the characteristics of the communities that will be impacted by the project. The tool can provide some assistance in answering these questions, but in most cases, if the answer to the question is not clear, the tool will recommend gaining more information before a determination can be made about the project.
+
+The tool is available in both a static and interactive version. The static version, shown below, illustrates the flow of the decision tree from one question to another until an evaluation or recommendation is made. The interactive version, available on the "Use the Tool" page, presents each question one at a time and automatically direct the user to the next relevant question or outcome. The interactive version also contains some helpful resources, such as maps and tables, that may help users answer some of questions regarding the location or scale of the project.
 <br>
 <br>
 
