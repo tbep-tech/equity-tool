@@ -19,7 +19,95 @@ library(sf)
 library(mapview)
 ```
 
+
 Overview
+===========================================================
+
+Column {data-width=700}
+-----------------------------------------------------------------------
+
+<div class = "row">
+<div class = "col-md-2"></div>
+<div class = "col-md-10">
+
+<br>
+
+<font size='+2'><font color='#004F7E'><b>Overview of TBEP's Equity Decision Support Tool</b></font></font>
+
+Tampa Bay is a 400-square-mile estuary situated along the west coast of Florida in the second-most populous region in the state. Tampa Bay is an estuary of national significance and is of vital importance to the surrounding region's economy. The natural resources of Tampa Bay support essential industries such as tourism, mineral extraction, marine transportation, and other commercial and recreational activities. Additionally, the Tampa Bay watershed is comprised of rich and diverse habitats that provide ecosystem services and community benefits that enhance the quality of life.
+<br>
+<br>
+
+#### What is the purpose of this tool?
+
+The purpose of the Economic Valuation of Tampa Bay is to provide an economic valuation of the natural resources in Tampa Bay and its watershed. The results demonstrate the Tampa Bay estuary’s value in providing substantial economic, social, and environmental benefits to the region’s industries, residents, and visitors. Moreover, the methodologies established herein provide a replicable process for performing a valuation of Tampa Bay.
+<br>
+<br>
+
+#### How do you use the tool?
+
+Methodological summaries for each of these three analyses can be found in the Methods pages. For more detailed information regarding data sources, calculations, modeling, and results, consult the full 2023 Economic Valuation of Tampa Bay report, which can be downloaded using the link on the right side of this page.
+<br>
+<br>
+
+```{r, fig.align='center', out.width='100%'}
+knitr::include_graphics('img/equitytool.jpg')
+```
+
+<br>
+
+Citation info here: [![DOI](https://zenodo.org/badge/659269746.svg)](https://zenodo.org/badge/latestdoi/659269746){target="_blank"}
+
+<a rel='license' href='http://creativecommons.org/licenses/by/4.0/'><img alt='Creative Commons License' style='border-width:0' src='https://i.creativecommons.org/l/by/4.0/88x31.png' /></a>&nbsp;&nbsp;This website is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>.
+
+</div>
+<div class = "col-md-2"></div>
+</div>
+
+
+Column {data-width=325}
+-----------------------------------------------------------------------
+
+<div class = "row">
+<div class = "col-md-2"></div>
+<div class = "col-md-9">
+
+<br>
+
+#### Additional Resources
+
+<br>
+```{r, fig.align='left', out.width='90%'}
+knitr::include_graphics('img/strategy.png')
+```
+
+<font size="3">
+<b>BIL Equity Strategy</b>
+<br>
+The <i>Bipartisan Infrastructure Law Equity Strategy</i> published by TBEP in 2023 outlines the development of metrics to quantify the impacts of our projects within underserved communities throughout the watershed and track progress toward achieving our equity targets. Click [here](https://drive.google.com/file/d/1VG9J5cYVcfJpSHW_pPyJoOpkBFxs2fAI/view?usp=sharing) to read the entire equity strategy.
+<br>
+<br>
+<br>
+```{r, fig.align='left', out.width='90%'}
+knitr::include_graphics('img/mappingsite.png')
+```
+<br>
+<b>Mapping Communities</b>
+<br>
+Interested in learning more about the data underpinning the Equity Strategy? The <i>TBEP Equity Strategy: Mapping</i> site provides instructions and R code for mapping underserved and overburdened communities in Tampa Bay, including an example of how to track the flow of project benefits to these communities. You can access the site [here](https://tbep-tech.github.io/equity-plan-mapping/).
+<br>
+<br>
+
+If you have any questions or comments about the Equity Strategy or the Equity Decision Support Tool, you can contact [Dr. Blake Simmons](mailto:bsimmons@tbep.org).
+
+</font> 
+
+</div>
+<div class = "col-md-2"></div>
+</div>
+
+
+Use the Tool
 ===========================================================
 
 Column {data-width=50}
