@@ -146,7 +146,8 @@ tabsetPanel(
            actionButton("PROX_SHORE_BAY_No", "No"), 
            actionButton("PROX_SHORE_BAY_Unsure", "Unsure"),
            HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
-           HTML("<img src = 'img/bay.png' width = '90%'>")
+           HTML("<img src = 'img/bay.png' width = '90%'>"),
+           HTML("<br/><br/><img src = 'img/baymap.png' width = '90%'>")
   ),
   tabPanel("PROX_SHORE_BAYSEG", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area within 1 mile of the shoreline?<br/><br/>"),
@@ -154,7 +155,8 @@ tabsetPanel(
            actionButton("PROX_SHORE_BAYSEG_No", "No"), 
            actionButton("PROX_SHORE_BAYSEG_Unsure", "Unsure"),
            HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
-           HTML("<img src = 'img/bayseg.png' width = '90%'>")
+           HTML("<img src = 'img/bayseg.png' width = '90%'>"),
+           HTML("<br/><br/><img src = 'img/baysegmap.png' width = '90%'>")
   ),
   tabPanel("PROX_REGION_WATERSHED", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
@@ -162,7 +164,8 @@ tabsetPanel(
            actionButton("PROX_REGION_WATERSHED_No", "No"), 
            actionButton("PROX_REGION_WATERSHED_Unsure", "Unsure"),
            HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
-           HTML("<img src = 'img/watershed.png' width = '90%'>")
+           HTML("<img src = 'img/watershed.png' width = '90%'>"),
+           HTML("<br/><br/><img src = 'img/watershedmap.png' width = '90%'>")
   ),
   tabPanel("PROX_REGION_COUNTY", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
@@ -170,7 +173,8 @@ tabsetPanel(
            actionButton("PROX_REGION_COUNTY_No", "No"), 
            actionButton("PROX_REGION_COUNTY_Unsure", "Unsure"),
            HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
-           HTML("<img src = 'img/counties.png' width = '90%'>")
+           HTML("<img src = 'img/counties.png' width = '90%'>"),
+           HTML("<br/><br/><img src = 'img/countiesmap.png' width = '86%'>")
   ),
   tabPanel("PROX_REGION_CITY", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
@@ -178,7 +182,8 @@ tabsetPanel(
            actionButton("PROX_REGION_CITY_No", "No"), 
            actionButton("PROX_REGION_CITY_Unsure", "Unsure"),
            HTML("<br/><br/><i>You can use the table below to help answer this question. If you are still unsure, click 'Unsure'.<br/><br/></i>"),
-           HTML("<img src = 'img/cities.png' width = '90%'>")
+           HTML("<img src = 'img/cities.png' width = '33%'>"),
+           HTML("<img src = 'img/citiesmap.png' width = '53%'>")
   ),
   tabPanel("PROX_REGION_OTHER", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do underserved communities make up 40% or more of the land area in this region?<br/><br/>"),
