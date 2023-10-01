@@ -415,3 +415,75 @@ Column {data-width=125}
 <div class = "col-md-2"></div>
 </div>
 
+
+Resources
+===========================================================
+
+Column {data-width=700}
+-----------------------------------------------------------------------
+
+<div class = "row">
+<div class = "col-md-2"></div>
+<div class = "col-md-10">
+
+<br>
+
+<font size='+2'><font color='#004F7E'><b>Useful Resources</b></font></font>
+
+The interactive maps on this page can be used to help users answer questions in the Equity Decision Support Tool about the location of proposed projects relative to underserved communities in the watershed. Users can use the map zoom function to locate the area of their project.
+
+<br>
+
+#### Underserved Communities
+
+The map below shows the locations of underserved communities, areas within 1 mile of those communities, and flowlines (for identifying downstream communities).
+
+```{r}
+load(file = 'data/tb_equity.RData')
+load(file = 'data/tb_flowlines.RData')
+
+mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities") + mapview(tb_flowlines, col.regions = "blue", layer.name = "Flowlines") + mapview(under_buffer, col.regions = "red", layer.name = "1 mile buffer")
+```
+
+
+<br>
+
+#### How do you use the tool?
+
+The Equity Decision Support Tool presents the user with a series of questions about the project. The majority of these questions only require a simple 'Yes' or 'No' answer. Based on the answer, the tool directs the user to the relevant follow-up question or evaluation/recommendation.
+
+Many of the questions require specific knowledge regarding (1) the location of the project, (2) the expected benefits of the project, and (3) the characteristics of the communities that will be impacted by the project. The tool can provide some assistance in answering these questions, but in most cases, if the answer to the question is not clear, the tool will recommend gaining more information before a determination can be made about the project.
+
+The tool is available in both a static and interactive version. The static version, shown below, illustrates the flow of the decision tree from one question to another until an evaluation or recommendation is made. The interactive version, available on the "Use the Tool" page, presents each question one at a time and automatically direct the user to the next relevant question or outcome. The interactive version also contains some helpful resources, such as maps and tables, that may help users answer some of questions regarding the location or scale of the project.
+<br>
+<br>
+
+```{r, fig.align='center', out.width='100%'}
+knitr::include_graphics('img/equitytool.jpg')
+```
+
+<br>
+
+Citation info here: [![DOI](https://zenodo.org/badge/659269746.svg)](https://zenodo.org/badge/latestdoi/659269746){target="_blank"}
+
+<a rel='license' href='http://creativecommons.org/licenses/by/4.0/'><img alt='Creative Commons License' style='border-width:0' src='https://i.creativecommons.org/l/by/4.0/88x31.png' /></a>&nbsp;&nbsp;This website is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>.
+
+</div>
+<div class = "col-md-2"></div>
+</div>
+
+
+Column {data-width=150}
+-----------------------------------------------------------------------
+
+<div class = "row">
+<div class = "col-md-2"></div>
+<div class = "col-md-9">
+
+<br>
+
+
+</div>
+<div class = "col-md-2"></div>
+</div>
+
