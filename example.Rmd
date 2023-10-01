@@ -171,7 +171,8 @@ tabsetPanel(
   tabPanel("PROX_MULTIPLE", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is one of those locations within 1 mile or directly upstream of an underserved community?<br/><br/>"),
            actionButton("PROX_MULTIPLE_Yes", "Yes"), 
-           actionButton("PROX_MULTIPLE_No", "No")
+           actionButton("PROX_MULTIPLE_No", "No"),
+           HTML("</br></br><i>Not sure? Find for your project's location in the maps of underserved communities available on the <b>Resources</b> page.</i>")
   ),
   tabPanel("OUTCOME", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Would outcomes be significantly reduced if placed near the underserved community?<br/><br/>"),
@@ -207,7 +208,8 @@ tabsetPanel(
   tabPanel("PROX_SINGLE", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is the project located within 1 mile or directly upstream of an underserved community?<br/><br/>"),
            actionButton("PROX_SINGLE_Yes", "Yes"), 
-           actionButton("PROX_SINGLE_No", "No")
+           actionButton("PROX_SINGLE_No", "No"),
+           HTML("</br></br><i>Not sure? Find for your project's location in the maps of underserved communities available on the <b>Resources</b> page.</i>")
   ),
   tabPanel("BENEFIT", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Does the project still provide some benefit to underserved communities?<br/><br/>"),
@@ -434,60 +436,30 @@ The interactive maps on this page can be used to help users answer questions in 
 
 <br>
 
-#### Underserved Communities
+#### Proximity to Underserved Communities
 
-The map below shows the locations of underserved communities, areas within 1 mile of those communities, and flowlines (for identifying downstream communities).
+The map below shows the locations of underserved communities and areas within 1 mile of those communities.
 
 ```{r}
 load(file = 'data/tb_equity.RData')
-load(file = 'data/tb_flowlines.RData')
 load(file = 'data/buffer_under.RData')
 
-mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities") + mapview(tb_flowlines, col.regions = "blue", layer.name = "Flowlines") + mapview(buffer_under, col.regions = "red", layer.name = "1 mile buffer")
-
-# Entire bay
-mapview(bay, col.regions = "red", layer.name = "Tampa Bay Shoreline (1 mile)") + mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
-
-# Bay segments
-mapview(bayseg, zcol = "BAY_SEG", col.regions = list("red","orange","yellow","green","blue","violet","brown"), layer.name = "Bay Segment Shoreline (1 mile)", label = "BAY_SEG") + 
-  mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
-
-# Counties
-mapview(county, zcol = "NAME", col.regions = list("red","orange","yellow","green","blue","violet"), layer.name = "County (Watershed Boundary)", label = "NAME") + 
-  mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
-
-# Cities
-mapview(city, zcol = "minorciv_1", layer.name = "Municipalities (Watershed Boundary)", label = "minorciv_1") + 
-  mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
-
-# Watershed
-mapview(watershed, layer.name = "Tampa Bay Watershed") + 
-  mapview(tb_equity, col.regions = "black", layer.name = "Underserved Communities")
-
-```
-
-
-<br>
-
-#### How do you use the tool?
-
-The Equity Decision Support Tool presents the user with a series of questions about the project. The majority of these questions only require a simple 'Yes' or 'No' answer. Based on the answer, the tool directs the user to the relevant follow-up question or evaluation/recommendation.
-
-Many of the questions require specific knowledge regarding (1) the location of the project, (2) the expected benefits of the project, and (3) the characteristics of the communities that will be impacted by the project. The tool can provide some assistance in answering these questions, but in most cases, if the answer to the question is not clear, the tool will recommend gaining more information before a determination can be made about the project.
-
-The tool is available in both a static and interactive version. The static version, shown below, illustrates the flow of the decision tree from one question to another until an evaluation or recommendation is made. The interactive version, available on the "Use the Tool" page, presents each question one at a time and automatically direct the user to the next relevant question or outcome. The interactive version also contains some helpful resources, such as maps and tables, that may help users answer some of questions regarding the location or scale of the project.
-<br>
-<br>
-
-```{r, fig.align='center', out.width='100%'}
-knitr::include_graphics('img/equitytool.jpg')
+mapview(buffer_under, col.regions = "#F2AD00", layer.name = "1 mile buffer", alpha.regions = 0.5) + mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5)
 ```
 
 <br>
+<br>
+The map below shows the locations of flowlines in the watershed for tracking the flow of benefits to downstream underserved communities.
 
-Citation info here: [![DOI](https://zenodo.org/badge/659269746.svg)](https://zenodo.org/badge/latestdoi/659269746){target="_blank"}
+```{r}
+load(file = 'data/tb_flowlines.RData')
 
-<a rel='license' href='http://creativecommons.org/licenses/by/4.0/'><img alt='Creative Commons License' style='border-width:0' src='https://i.creativecommons.org/l/by/4.0/88x31.png' /></a>&nbsp;&nbsp;This website is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>.
+mapview(tb_flowlines, color = "#004F7E", layer.name = "Flowlines", label = "GNIS_NAME") + mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5)
+```
+
+<br>
+<br>
+<i>More resources coming soon!</i>
 
 </div>
 <div class = "col-md-2"></div>
