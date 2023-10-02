@@ -430,7 +430,7 @@ Column {data-width=700}
 
 <font size='+2'><font color='#004F7E'><b>Useful Resources</b></font></font>
 
-The interactive maps on this page can be used to help users answer questions in the Equity Decision Support Tool about the location of proposed projects relative to underserved communities in the watershed. Users can use the map zoom function to locate the area of their project.
+The interactive maps on this page can be used to help users answer questions in the Equity Decision Support Tool about the location of proposed projects relative to underserved communities in the watershed. Zoom in on the maps to locate the area of your project.
 
 <br>
 
