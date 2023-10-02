@@ -15,8 +15,6 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 # libraries
 library(flexdashboard)
 library(shiny)
-library(sf)
-library(mapview)
 ```
 
 
@@ -441,10 +439,8 @@ The interactive maps on this page can be used to help users answer questions in 
 The map below shows the locations of underserved communities and areas within 1 mile of those communities.
 
 ```{r}
-load(file = 'data/tb_equity.RData')
-load(file = 'data/buffer_under.RData')
-
-mapview(buffer_under, col.regions = "#F2AD00", layer.name = "1 mile buffer", alpha.regions = 0.5) + mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5)
+load(file = 'data/buffer_under_map.RData')
+buffer_under_map
 ```
 
 <br>
@@ -452,9 +448,8 @@ mapview(buffer_under, col.regions = "#F2AD00", layer.name = "1 mile buffer", alp
 The map below shows the locations of flowlines in the watershed for tracking the flow of benefits to downstream underserved communities.
 
 ```{r}
-load(file = 'data/tb_flowlines.RData')
-
-mapview(tb_flowlines, color = "#004F7E", layer.name = "Flowlines", label = "GNIS_NAME") + mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5)
+load(file = 'data/flowlines_map.RData')
+flowlines_map
 ```
 
 <br>
