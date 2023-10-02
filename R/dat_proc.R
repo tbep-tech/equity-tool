@@ -14,6 +14,7 @@ bnds <- sf::st_bbox(newflow)
 
 # esri tiles
 esri <- rev(grep("^Esri", leaflet::providers, value = TRUE))
+esri <- esri[!names(esri) %in% c('Esri.OceanBasemap', 'Esri')]
 
 # empty map
 m <- leaflet::leaflet() %>%
@@ -57,8 +58,6 @@ buffer_under_map <- m %>%
 save(buffer_under_map, compress = "xz", file = "data/buffer_under_map.RData")
 
 # flowlines map -------------------------------------------------------------------------------
-
-
 
 tb_flowlines_fixed <- st_make_valid(newflow)
 

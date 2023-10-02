@@ -447,10 +447,10 @@ buffer_under_map
 <br>
 The map below shows the locations of flowlines in the watershed for tracking the flow of benefits to downstream underserved communities.
 
-<!-- ```{r} -->
-<!-- load(file = 'data/flowlines_map.RData') -->
-<!-- flowlines_map -->
-<!-- ``` -->
+```{r}
+load(file = 'data/flowlines_map.RData')
+flowlines_map
+```
 
 <br>
 <br>
