@@ -10,6 +10,12 @@ save(buffer_under_map, compress = "xz", file = "data/buffer_under_map.RData")
 
 load(file = 'data/tb_flowlines.RData')
 
-flowlines_map <- mapview(tb_flowlines, color = "#004F7E", layer.name = "Flowlines", label = "GNIS_NAME") + mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5)
+
+newflow <- st_read("data/tb_flowlines_dissolved.shp")
+
+
+tb_flowlines_fixed <- st_make_valid(newflow)
+
+flowlines_map <- mapview(tb_flowlines_fixed, color = "#004F7E", layer.name = "Flowlines", label = "GNIS_NAME") + mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities")
 
 save(flowlines_map, compress = "xz", file = "data/flowlines_map.RData")
