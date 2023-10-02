@@ -10,7 +10,7 @@ css: styles.css
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F, message = F, warning = F)
+knitr::opts_chunk$set(echo = F, message = F, warning = F, cache = T)
 
 # libraries
 library(flexdashboard)
@@ -138,7 +138,7 @@ Column {data-width=600}
 <div class = "col-md-2"></div>
 <div class = "col-md-10">
 
-```{r}
+```{r cache = FALSE}
 tabsetPanel(
   id = "wizard",
   type = "hidden",
@@ -440,7 +440,7 @@ The interactive maps on this page can be used to help users answer questions in 
 
 The map below shows the locations of underserved communities and areas within 1 mile of those communities.
 
-```{r}
+```{r cache=TRUE}
 load(file = 'data/tb_equity.RData')
 load(file = 'data/buffer_under.RData')
 
@@ -451,7 +451,7 @@ mapview(buffer_under, col.regions = "#F2AD00", layer.name = "1 mile buffer", alp
 <br>
 The map below shows the locations of flowlines in the watershed for tracking the flow of benefits to downstream underserved communities.
 
-```{r}
+```{r cache=TRUE}
 load(file = 'data/tb_flowlines.RData')
 
 mapview(tb_flowlines, color = "#004F7E", layer.name = "Flowlines", label = "GNIS_NAME") + mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5)
