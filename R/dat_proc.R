@@ -1,5 +1,6 @@
 library(leaflet)
 library(sf)
+library(dplyr)
 
 load(file = 'data/tb_equity.RData')
 load(file = 'data/buffer_under.RData')
@@ -59,10 +60,39 @@ save(buffer_under_map, compress = "xz", file = "data/buffer_under_map.RData")
 
 # flowlines map -------------------------------------------------------------------------------
 
-tb_flowlines_fixed <- st_make_valid(newflow)
+tb_flowlines_fixed <- st_make_valid(newflow) %>%
+  mutate(
+    GNIS_NAME = case_when(
+      is.na(GNIS_NAME) ~ 'No name',
+      T ~ GNIS_NAME
+    )
+  ) %>%
+  st_simplify(dTolerance = 20)
 
-flowlines_map <- mapview(tb_flowlines_fixed, color = "#004F7E", layer.name = "Flowlines", label = "GNIS_NAME") + mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities")
-
-flowlines_map <- flowlines_map@map
+flowlines_map <- m %>%
+  addPolygons(
+    data = tb_equity,
+    group = "Underserved Communities",
+    fillColor = "#00806E",
+    color = 'black',
+    fillOpacity = 0.5,
+    weight = 1,
+    opacity = 1
+  ) %>%
+  addPolylines(
+    data = tb_flowlines_fixed,
+    group = "Flowlines",
+    color = "#004F7E",
+    label = ~GNIS_NAME,
+    opacity = 1,
+    weight = 1.5
+  ) %>%
+  addLegend(labels = "Flowlines", colors = "#004F7E", opacity = 1) %>%
+  addLegend(labels = "Underserved Communities", colors = "#00806E", opacity = 1) %>%
+  addLayersControl(
+    baseGroups = names(esri),
+    overlayGroups = c("Flowlines", "Underserved Communities"),
+    position = 'topleft'
+  )
 
 save(flowlines_map, compress = "xz", file = "data/flowlines_map.RData")
