@@ -16,7 +16,6 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 library(flexdashboard)
 library(shiny)
 library(mapview)
-library(sf)
 
 load(file = 'data/tb_equity.RData')
 load(file = 'data/buffer_under.RData')
@@ -27,8 +26,8 @@ buffer_under_map <- mapview(buffer_under, col.regions = "#F2AD00", layer.name = 
 
 # flowlines map
 flowlines_map <- mapview(tb_flowlines_simp, color = "#004F7E", layer.name = "Flowlines", label = "GNIS_NAME") + mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5)
-```
 
+```
 
 Overview
 ===========================================================
