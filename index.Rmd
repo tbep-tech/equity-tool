@@ -63,7 +63,7 @@ The Equity Decision Support Tool presents the user with a series of questions ab
 
 Many of the questions require specific knowledge regarding (1) the location of the project, (2) the expected benefits of the project, and (3) the characteristics of the communities that will be impacted by the project. The tool can provide some assistance in answering these questions, but in most cases, if the answer to the question is not clear, the tool will recommend gaining more information before a determination can be made about the project.
 
-The tool is available in both a static and interactive version. The static version, shown below, illustrates the flow of the decision tree from one question to another until an evaluation or recommendation is made. The interactive version, available on the "Use the Tool" page, presents each question one at a time and automatically direct the user to the next relevant question or outcome. The interactive version also contains some helpful resources, such as maps and tables, that may help users answer some of questions regarding the location or scale of the project.
+The tool is available in both a static and interactive version. The static version, shown below, illustrates the flow of the decision tree from one question to another until an evaluation or recommendation is made. The interactive version, available on the "Use the Tool" page, presents each question one at a time and automatically directs the user to the next relevant question or outcome. The interactive version also contains some helpful resources, such as maps and tables, that may help users answer some of the questions regarding the location or scale of the project.
 <br>
 <br>
 
