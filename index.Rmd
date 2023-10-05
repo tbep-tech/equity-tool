@@ -187,26 +187,49 @@ tabsetPanel(
            actionButton("OUTCOME_Yes", "Yes"), 
            actionButton("OUTCOME_No", "No")
   ),
-  tabPanel("ACCESS_LOCAL", 
+  tabPanel("ACCESS_LOCAL_MULTIPLE", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is it reasonable to believe underserved communities would have (at least) equal access to the project's benefits as other communities?<br/><br/>"),
-           actionButton("ACCESS_LOCAL_Yes", "Yes"), 
-           actionButton("ACCESS_LOCAL_No", "No")
+           actionButton("ACCESS_LOCAL_MULTIPLE_Yes", "Yes"), 
+           actionButton("ACCESS_LOCAL_MULTIPLE_No", "No")
   ),
-  tabPanel("BURDEN", 
+  tabPanel("ACCESS_LOCAL_SINGLE", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Is it reasonable to believe underserved communities would have (at least) equal access to the project's benefits as other communities?<br/><br/>"),
+           actionButton("ACCESS_LOCAL_SINGLE_Yes", "Yes"), 
+           actionButton("ACCESS_LOCAL_SINGLE_No", "No")
+  ),
+  tabPanel("BURDEN_MULTIPLE", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Could the project help mitigate an environmental burden flagged in the underserved community?<br/><br/>"),
-           actionButton("BURDEN_Yes", "Yes"), 
-           actionButton("BURDEN_No", "No")
+           actionButton("BURDEN_MULTIPLE_Yes", "Yes"), 
+           actionButton("BURDEN_MULTIPLE_No", "No"),
+           HTML("</br></br><i>Not sure? Find your project's location in the maps of underserved communities available on the <b>Resources</b> page. Clicking or hovering over the nearby underserved tracts will show you the burdens we have flagged in the community.</i>")
   ),
-  tabPanel("RECOGNITION", 
+  tabPanel("BURDEN_SINGLE", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Could the project help mitigate an environmental burden flagged in the underserved community?<br/><br/>"),
+           actionButton("BURDEN_SINGLE_Yes", "Yes"), 
+           actionButton("BURDEN_SINGLE_No", "No"),
+           HTML("</br></br><i>Not sure? Find your project's location in the maps of underserved communities available on the <b>Resources</b> page. Clicking or hovering over the nearby underserved tracts will show you the burdens we have flagged in the community.</i>")
+  ),
+  tabPanel("RECOGNITION_MULTIPLE", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do the project benefits align with reported values, needs, or priorities of the community?<br/><br/>"),
-           actionButton("RECOGNITION_Yes", "Yes"), 
-           actionButton("RECOGNITION_No", "No"), 
-           actionButton("RECOGNITION_Unsure", "Unsure")
+           actionButton("RECOGNITION_MULTIPLE_Yes", "Yes"), 
+           actionButton("RECOGNITION_MULTIPLE_No", "No"), 
+           actionButton("RECOGNITION_MULTIPLE_Unsure", "Unsure")
   ),
-  tabPanel("WHY", 
+  tabPanel("RECOGNITION_SINGLE", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Do the project benefits align with reported values, needs, or priorities of the community?<br/><br/>"),
+           actionButton("RECOGNITION_SINGLE_Yes", "Yes"), 
+           actionButton("RECOGNITION_SINGLE_No", "No"), 
+           actionButton("RECOGNITION_SINGLE_Unsure", "Unsure")
+  ),
+  tabPanel("WHY_MULTIPLE", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Why not?<br/><br/>"),
-           actionButton("WHY_Char", "Due to project characteristics"), 
-           actionButton("WHY_Data", "Due to lack of data or information")
+           actionButton("WHY_MULTIPLE_Char", "Due to project characteristics"), 
+           actionButton("WHY_MULTIPLE_Data", "Due to lack of data or information")
+  ),
+  tabPanel("WHY_SINGLE", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Why not?<br/><br/>"),
+           actionButton("WHY_SINGLE_Char", "Due to project characteristics"), 
+           actionButton("WHY_SINGLE_Data", "Due to lack of data or information")
   ),
   tabPanel("IMPROVE", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/>Could access be reasonably improved without significantly reducing project outcomes or increasing timelines?<br/><br/>"),
@@ -307,9 +330,17 @@ tabsetPanel(
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>INCLUDE</font></b> <br/>The project could be included in TBEP's contributions to the equity target.<br/><br/>"),
            actionButton("STARTOVER_INC", "Start over")
   ),
-  tabPanel("ADAPT", 
-           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>ADAPT</font></b> <br/>With some modification, the project could contribute to TBEP's equity target.<br/><br/>"),
-           actionButton("STARTOVER_A", "Start over")
+  tabPanel("INCLUDE_MULTIPLE", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>INCLUDE</font></b> <br/>If the location within 1 mile or directly upstream of the underserved community is chosen, then the project could be included in TBEP's contributions to the equity target.<br/><br/>"),
+           actionButton("STARTOVER_INC_MULTIPLE", "Start over")
+  ),
+  tabPanel("ADAPT_RECOGNITION", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>ADAPT</font></b> <br/>The current project likely won't contribute to TBEP's equity target. However, if it can be modified to better align with the reported values, needs, or priorities of the underserved community, then the project could contribute to TBEP's equity target.<br/><br/>"),
+           actionButton("STARTOVER_A_RECOGNITION", "Start over")
+  ),
+  tabPanel("ADAPT_IMPROVE", 
+           HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>ADAPT</font></b> <br/>The current project likely won't contribute to TBEP's equity target. However, if measures are taken to improve underserved commmunities' access to the project benefits, the project could contribute to TBEP's equity target.<br/><br/>"),
+           actionButton("STARTOVER_A_IMPROVE", "Start over")
   ),
   tabPanel("JUSTIFY", 
            HTML("<br/><font size='+2'><font color='#004F7E'><b>Equity Decision Support Tool</b></font></font><br/><br/><b><font color='#00806E'>JUSTIFY</font></b> <br/>The project likely won't contribute to TBEP's equity target. Report why it would be inappropriate or impossible for the project to contribute to the target.<br/><br/>"),
@@ -345,13 +376,18 @@ observeEvent(input$ELIGIBLE_No, switch_page("MULTIPLE"))
 observeEvent(input$ARCHSITE_No, switch_page("MULTIPLE"))
 observeEvent(input$MULTIPLE_Yes, switch_page("PROX_MULTIPLE"))
 observeEvent(input$PROX_MULTIPLE_Yes, switch_page("OUTCOME"))
-observeEvent(input$OUTCOME_No, switch_page("ACCESS_LOCAL"))
-observeEvent(input$PROX_SINGLE_Yes, switch_page("ACCESS_LOCAL"))
-observeEvent(input$ACCESS_LOCAL_Yes, switch_page("BURDEN"))
-observeEvent(input$BURDEN_Yes, switch_page("RECOGNITION"))
-observeEvent(input$WHY_Char, switch_page("RECOGNITION"))
-observeEvent(input$BURDEN_No, switch_page("WHY"))
-observeEvent(input$ACCESS_LOCAL_No, switch_page("IMPROVE"))
+observeEvent(input$OUTCOME_No, switch_page("ACCESS_LOCAL_MULTIPLE"))
+observeEvent(input$PROX_SINGLE_Yes, switch_page("ACCESS_LOCAL_SINGLE"))
+observeEvent(input$ACCESS_LOCAL_MULTIPLE_Yes, switch_page("BURDEN_MULTIPLE"))
+observeEvent(input$BURDEN_MULTIPLE_Yes, switch_page("RECOGNITION_MULTIPLE"))
+observeEvent(input$WHY_MULTIPLE_Char, switch_page("RECOGNITION_MULTIPLE"))
+observeEvent(input$BURDEN_MULTIPLE_No, switch_page("WHY_MULTIPLE"))
+observeEvent(input$ACCESS_LOCAL_MULTIPLE_No, switch_page("IMPROVE"))
+observeEvent(input$ACCESS_LOCAL_SINGLE_Yes, switch_page("BURDEN_SINGLE"))
+observeEvent(input$BURDEN_SINGLE_Yes, switch_page("RECOGNITION_SINGLE"))
+observeEvent(input$WHY_SINGLE_Char, switch_page("RECOGNITION_SINGLE"))
+observeEvent(input$BURDEN_SINGLE_No, switch_page("WHY_SINGLE"))
+observeEvent(input$ACCESS_LOCAL_SINGLE_No, switch_page("IMPROVE"))
 observeEvent(input$ACCESS_REGION_No, switch_page("IMPROVE"))
 observeEvent(input$MULTIPLE_No, switch_page("PROX_SINGLE"))
 observeEvent(input$PROX_SINGLE_No, switch_page("BENEFIT"))
@@ -374,13 +410,16 @@ observeEvent(input$PROX_REGION_OTHER_No, switch_page("ACCESS_REGION"))
 observeEvent(input$PROX_SHORE_Yes, switch_page("INCLUDE"))
 observeEvent(input$PROX_REGION_Yes, switch_page("INCLUDE"))
 observeEvent(input$ACCESS_REGION_Yes, switch_page("INCLUDE"))
-observeEvent(input$RECOGNITION_Yes, switch_page("INCLUDE"))
+observeEvent(input$RECOGNITION_MULTIPLE_Yes, switch_page("INCLUDE_MULTIPLE"))
+observeEvent(input$RECOGNITION_SINGLE_Yes, switch_page("INCLUDE"))
 observeEvent(input$HOW_Title, switch_page("INCLUDE"))
 observeEvent(input$HOW_Stake, switch_page("INCLUDE"))
 observeEvent(input$HOW_Know, switch_page("INCLUDE"))
 observeEvent(input$HOW_Barrier, switch_page("INCLUDE"))
-observeEvent(input$IMPROVE_Yes, switch_page("ADAPT"))
-observeEvent(input$RECOGNITION_No, switch_page("ADAPT"))
+observeEvent(input$PROX_SHORE_BAYSEG_Yes, switch_page("INCLUDE"))
+observeEvent(input$IMPROVE_Yes, switch_page("ADAPT_IMPROVE"))
+observeEvent(input$RECOGNITION_MULTIPLE_No, switch_page("ADAPT_RECOGNITION"))
+observeEvent(input$RECOGNITION_SINGLE_No, switch_page("ADAPT_RECOGNITION"))
 observeEvent(input$IMPROVE_No, switch_page("JUSTIFY"))
 observeEvent(input$OUTCOME_Yes, switch_page("JUSTIFY"))
 observeEvent(input$BENEFIT_No, switch_page("JUSTIFY"))
@@ -391,17 +430,21 @@ observeEvent(input$PROX_REGION_CITY_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$PROX_REGION_OTHER_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$PROX_SHORE_BAY_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$PROX_SHORE_BAYSEG_Unsure, switch_page("INVESTIGATE"))
-observeEvent(input$RECOGNITION_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$RECOGNITION_MULTIPLE_Unsure, switch_page("INVESTIGATE"))
+observeEvent(input$RECOGNITION_SINGLE_Unsure, switch_page("INVESTIGATE"))
 observeEvent(input$HOW_Unsure, switch_page("INVESTIGATE"))
-observeEvent(input$WHY_Data, switch_page("INVESTIGATE"))
+observeEvent(input$WHY_MULTIPLE_Data, switch_page("INVESTIGATE"))
+observeEvent(input$WHY_SINGLE_Data, switch_page("INVESTIGATE"))
 observeEvent(input$ARCHSITE_Unsure, switch_page("CONSULT_ARCH"))
 observeEvent(input$REMAINS_No, switch_page("CONSULT"))
 observeEvent(input$HOW_Else, switch_page("CONSULT"))
 observeEvent(input$REMAINS_Yes, switch_page("RECONSIDER"))
 
 observeEvent(input$STARTOVER_INC, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_INC_MULTIPLE, switch_page("LOCATION"))
 observeEvent(input$STARTOVER_INV, switch_page("LOCATION"))
-observeEvent(input$STARTOVER_A, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_A_IMPROVE, switch_page("LOCATION"))
+observeEvent(input$STARTOVER_A_RECOGNITION, switch_page("LOCATION"))
 observeEvent(input$STARTOVER_J, switch_page("LOCATION"))
 observeEvent(input$STARTOVER_C, switch_page("LOCATION"))
 observeEvent(input$STARTOVER_CARCH, switch_page("LOCATION"))
@@ -446,7 +489,7 @@ The interactive maps on this page can be used to help users answer questions in 
 
 #### Proximity to Underserved Communities
 
-The map below shows the locations of underserved communities and areas within 1 mile of those communities.
+The map below shows the locations of underserved communities and areas within 1 mile of those communities. Clicking or hovering over a community will show you the environmental burdens that have been flagged in that community.
 
 ```{r}
 buffer_under_map
@@ -454,7 +497,7 @@ buffer_under_map
 
 <br>
 <br>
-The map below shows the locations of flowlines in the watershed for tracking the flow of benefits to downstream underserved communities.
+The map below shows the locations of flowlines in the watershed for tracking the flow of benefits to downstream underserved communities. Clicking or hovering over a community will show you the environmental burdens that have been flagged in that community. Clicking or hovering over a flowline will show you the name of the river or creek (if applicable).
 
 ```{r}
 flowlines_map
