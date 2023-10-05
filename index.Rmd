@@ -16,15 +16,15 @@ knitr::opts_chunk$set(echo = F, message = F, warning = F)
 library(flexdashboard)
 library(shiny)
 
-load(file = 'data/tb_equity.RData')
-load(file = 'data/buffer_under.RData')
+load(file = 'data/tb_equity_simple.RData')
+load(file = 'data/buffer_under_simple.RData')
 load(file = 'data/tb_flowlines_simp.RData')
 
 # buffer map
-buffer_under_map <- mapview::mapview(buffer_under, col.regions = "#F2AD00", layer.name = "1 mile buffer", alpha.regions = 0.5) + mapview::mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5)
+buffer_under_map <- mapview::mapview(buffer_under_simple, col.regions = "#F2AD00", layer.name = "1 mile buffer", alpha.regions = 0.5, label = "Data") + mapview::mapview(tb_equity_simple, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5, label = "Burden")
 
 # flowlines map
-flowlines_map <- mapview::mapview(tb_flowlines_simp, color = "#004F7E", layer.name = "Flowlines", label = "GNIS_NAME") + mapview::mapview(tb_equity, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5)
+flowlines_map <- mapview::mapview(tb_flowlines_simp, color = "#004F7E", layer.name = "Flowlines", label = "GNIS_NAME") + mapview::mapview(tb_equity_simple, col.regions = "#00806E", layer.name = "Underserved Communities", alpha.regions = 0.5, label = "Burden")
 
 ```
 
